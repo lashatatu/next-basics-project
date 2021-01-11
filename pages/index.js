@@ -4,15 +4,26 @@ import SideMenu from "../components/sideMenu";
 import Carousel from "../components/carousel";
 import MovieList from "../components/movieList";
 import Footer from "../components/footer";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 import {getMovies} from "../actions";
 
 const Home = () => {
     const [movies, setMovies] = useState([])
-    getMovies().then((movies) => {
-        setMovies(movies)
-    })
+
+    useEffect(async()=>{
+        // getMovies().then((movies) => {
+        //     setMovies(movies)
+        // })
+        const fetchData=async ()=>{
+            const resMovies=await getMovies()
+            setMovies(resMovies)
+        }
+        fetchData();
+
+    },[])
+
+
     return (
         <div>
             <Head>
