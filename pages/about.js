@@ -15,7 +15,7 @@ class About extends React.Component {
 
     render() {
         return (
-            <h1>hello i am class componenta</h1>
+            <h1>hello i am class component</h1>
         );
     }
 }
