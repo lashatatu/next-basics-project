@@ -37,7 +37,7 @@ class MovieApp extends App {
                 <Footer/>
                 <style jsx>{`
         .base-page{
-            padding-top:50px;
+            padding-top:80px;
         }
         `
                 }
