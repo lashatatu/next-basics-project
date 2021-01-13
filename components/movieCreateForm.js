@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 
 const MovieCreateForm = ( props ) => {
@@ -119,7 +119,7 @@ const MovieCreateForm = ( props ) => {
                className="form-control"
                id="longDesc"
                rows="3"
-            ></textarea >
+            />
          </div >
          <div className="form-group">
             <label htmlFor="genre">Genre</label >
