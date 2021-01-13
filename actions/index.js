@@ -35,10 +35,10 @@ const MOVIE_DATA = [
 ]
 
 const CATEGORY_DATA = [
-    {id: 'c-1', name: 'drama'},
-    {id: 'c-2', name: 'action'},
-    {id: 'c-3', name: 'adventeru'},
-    {id: 'c-4', name: 'historical'},
+    { id: 'c-1', name: 'Drama' },
+    { id: 'c-2', name: 'Action' },
+    { id: 'c-3', name: 'Adventure' },
+    { id: 'c-4', name: 'Historical' }
 ]
 
 export const getCategories = () => {
@@ -52,25 +52,38 @@ export const getCategories = () => {
 
 export const getMovies = () => {
 
-    return new Promise((resolve, reject) => {
+    return new Promise(( resolve, reject ) => {
         setTimeout(() => {
-            resolve(MOVIE_DATA)
+            resolve(MOVIE_DATA);
             // reject('Cannot fetch data!')
-        }, 50)
-    })
-}
+        }, 50);
+    });
+};
 
-export const getMovieById = (id) => {
+export const createMovie = ( movie ) => {
+    return new Promise(( resolve, reject ) => {
 
-    return new Promise((resolve, reject) => {
-        const movieIndex = MOVIE_DATA.findIndex((movie) => {
-            return movie.id === id
-        })
-        const movie=MOVIE_DATA[movieIndex]
+        movie.id=Math.random().toString(36).substr(2,7)
+
+        MOVIE_DATA.push(movie);
+        setTimeout(() => {
+            resolve(MOVIE_DATA);
+            // reject('Cannot fetch data!')
+        }, 50);
+    });
+};
+
+export const getMovieById = ( id ) => {
+
+    return new Promise(( resolve, reject ) => {
+        const movieIndex = MOVIE_DATA.findIndex(( movie ) => {
+            return movie.id === id;
+        });
+        const movie = MOVIE_DATA[ movieIndex ];
 
         setTimeout(() => {
-            resolve(movie)
-        }, 50)
-    })
+            resolve(movie);
+        }, 50);
+    });
 
-}
+};
