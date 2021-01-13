@@ -1,40 +1,50 @@
 import React, { useState } from 'react';
 
 const MovieCreateForm = ( props ) => {
-   const [form, setForm] = useState({
-      name: '',
-      description: '',
-      rating: '',
-      image: '',
-      cover: '',
-      longDesc:''
-   });
+  const [isInitialDataLoaded, setInitialDataLoaded] = useState(false);
+  const defaultData = {
+    name: '',
+    description: '',
+    rating: '',
+    image: '',
+    cover: '',
+    longDesc: ''
+  };
+  const formData = props.initialData ? { ...props.initialData } : defaultData;
+  const [form, setForm] = useState(formData);
 
-   const handleChange = ( event ) => {
-      const target = event.target;
-      const name = target.name;
+  // useEffect(() => {
+  //   if ( props.initialData ) {
+  //     setForm(props.initialData);
+  //     setInitialDataLoaded(true);
+  //   }
+  // }, [isInitialDataLoaded]);
 
-      setForm({
-         ...form,
-         [ name ]: target.value
-      });
-   };
-   const handleGenreChange = ( event ) => {
-      const { options } = event.target;
-      const optionsLength = options.length;
-      let value = [];
+  const handleChange = ( event ) => {
+    const target = event.target;
+    const name = target.name;
 
-      for ( let i = 0; i < optionsLength; i++ ) {
-         if ( options[ i ].selected ) {
-            value.push(options[ i ].value);
-         }
+    setForm({
+      ...form,
+      [ name ]: target.value
+    });
+  };
+  const handleGenreChange = ( event ) => {
+    const { options } = event.target;
+    const optionsLength = options.length;
+    let value = [];
+
+    for ( let i = 0; i < optionsLength; i++ ) {
+      if ( options[ i ].selected ) {
+        value.push(options[ i ].value);
       }
+    }
 
-      setForm({
-         ...form,
-         genre: value.toString()
-      });
-   };
+    setForm({
+      ...form,
+      genre: value.toString()
+    });
+  };
 
    const submitForm = () => {
       props.handleFormSubmit({ ...form });
@@ -139,7 +149,7 @@ const MovieCreateForm = ( props ) => {
             onClick={submitForm}
             type="button"
             className="btn btn-primary"
-         >Create
+         >{props.submitButton||'create'}
          </button >
       </form >
 
