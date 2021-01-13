@@ -1,34 +1,35 @@
-import SideMenu from "../components/sideMenu";
-import Carousel from "../components/carousel";
-import MovieList from "../components/movieList";
-import React from "react";
+import SideMenu from '../components/sideMenu';
+import Carousel from '../components/carousel';
+import MovieList from '../components/movieList';
+import React from 'react';
 
-import {getMovies,getCategories} from "../actions";
+import { getCategories, getMovies } from '../actions';
 
-const Home = (props) => {
-    const { images, categories, movies } = props
+
+const Home = ( props ) => {
+    const { images, categories, movies } = props;
     return (
-        <div>
-            <div className={"home-page"}>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-3">
-                            <SideMenu
-                                categories={categories}
-                                appName={"Movie DB"}
-                            />
-                        </div>
-                        <div className="col-lg-9">
-                            <Carousel images={images}/>
-                            <div className="row">
-                                <MovieList movies={movies || []} />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
+       <div >
+           <div className={'home-page'}>
+               <div className="container">
+                   <div className="row">
+                       <div className="col-lg-3">
+                           <SideMenu
+                              categories={categories}
+                              appName={'Movie DB'}
+                           />
+                       </div >
+                       <div className="col-lg-9">
+                           <Carousel images={images}/>
+                           <div className="row">
+                               <MovieList movies={movies || []}/>
+                           </div >
+                       </div >
+                   </div >
+               </div >
+           </div >
+       </div >
+    );
 }
 
 Home.getInitialProps = async () => {

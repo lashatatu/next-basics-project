@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 // const About = () => {
 //     const a = 'hello world!'
 //     return (
@@ -15,7 +15,7 @@ class About extends React.Component {
 
     render() {
         return (
-            <h1>hello i am class component</h1>
+           <h1 >hello i am class component</h1 >
         );
     }
 }

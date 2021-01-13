@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-
 const MovieCreateForm = ( props ) => {
    const [form, setForm] = useState({
       name: '',
