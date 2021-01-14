@@ -7,7 +7,7 @@ import { getCategories, getMovies } from '../actions';
 
 const Home = ( props ) => {
     const { images, categories, movies } = props;
-    const [filter, setFilter] = useState('all');
+    const [filter, setFilter] = useState('All');
 
     const changeCategory = ( category ) => {
         setFilter(category);

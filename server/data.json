@@ -31,15 +31,5 @@
     "genre": "Adventure",
     "cover": "https://images.unsplash.com/photo-1462759353907-b2ea5ebd72e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2389&q=80",
     "image": "https://img.cinemablend.com/filter:scale/quill/0/f/5/2/a/6/0f52a6843a25c1a5c1f9a0c00548cad9e1d912e2.jpg?mw=600"
-  },
-  {
-    "name": "updated",
-    "description": "test",
-    "rating": "4.5",
-    "image": "https://images.unsplash.com/photo-1533105045747-b9d71a0955f9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1264&q=80",
-    "cover": "https://images.unsplash.com/photo-1533105045747-b9d71a0955f9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1264&q=80",
-    "longDesc": "asdasdasdastest movie 2 long dec",
-    "genre": "Music,Adventure,Historical",
-    "id": "v90ua"
   }
 ]
