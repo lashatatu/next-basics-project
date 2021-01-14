@@ -80,25 +80,19 @@ app.prepare().then(() => {
       });
    });
 
-//    server.get('/faq', ( req, res ) => {
-//       res.send(`<head>
-//          <head>
-//             </head>
-//                <body>
-//                   <h1>hello world</h1>
-//                </body>
-//          </head>
-// `);
-//    });
-
-   server.get('*', ( req, res ) => {
-      return handle(req, res);
-   });
+   // server.get('*', ( req, res ) => {
+   //    return handle(req, res);
+   // });
+   //
+   // server.post('*', ( req, res ) => {
+   //    return handle(req, res);
+   // });
 
    const PORT = process.env.PORT || 3000;
 
-   server.listen(PORT, ( err ) => {
+   server.use(handle).listen(PORT, ( err ) => {
       if ( err ) throw err;
       console.log('> Ready on port ' + PORT);
    });
 });
+
